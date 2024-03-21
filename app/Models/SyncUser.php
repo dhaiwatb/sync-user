@@ -17,12 +17,15 @@ class SyncUser extends Model
         'contact_number'
     ];
 
+    public $timestamps = false;
+
     public function create_user($user){
         return $this->create([
             'name' => $user['name'] ,
             'email' => $user['email'] ,
             'contact_number' => $user['contact_number'] ,
             'image' => $user['image'] ,
+
         ]);
     }
 }

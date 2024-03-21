@@ -29,7 +29,11 @@ class SyncUser extends Command
     {
         $users = User::get()->toArray();
 
-        SyncUserModel::truncate();
+        if(SyncUserModel::get()->count() > 0){
+
+            SyncUserModel::truncate();
+        }
+
         
         SyncUserModel::insert($users);
     }

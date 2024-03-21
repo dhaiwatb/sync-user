@@ -23,4 +23,6 @@ class User extends Authenticatable
         'image',
         'contact_number'
     ];
+
+    public $timestamps = false;
 }
