@@ -19,6 +19,8 @@ class UsersController extends Controller
 			'username' => 'required',
 			'contact_number' => 'required|max:10',
 			'image' => 'required|mimes:jpg,png,jpeg|max:4000'
+		],[
+			'image.max' => 'Image size should not be greater than 4MB!'
 		]);
 		
 		if($validator->fails()){
