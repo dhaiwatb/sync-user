@@ -20,28 +20,28 @@
                     @csrf
                     <div class="form-group my-1">
                         <label for="input-username">Username</label>
-                        <input type="text" class="form-control" id="input-username" aria-describedby="username" placeholder="Enter Username" name="username">
+                        <input type="text" class="form-control" id="input-username" aria-describedby="username" placeholder="Enter Username" name="username" value="{{ old('username') }}">
                         @if ($errors->has('username'))
                             <div class="alert alert-danger" role="alert">{{ $errors->first('username') }}</strong></div>
                         @endif                          
                     </div>
                     <div class="form-group my-1">
                         <label for="input-email">Email address</label>
-                        <input type="email" class="form-control" id="input-email" aria-describedby="email" placeholder="Enter email" name="email">
+                        <input type="email" class="form-control" id="input-email" aria-describedby="email" placeholder="Enter email" name="email" value="{{ old('email') }}">
                         @if ($errors->has('email'))
                             <div class="alert alert-danger" role="alert">{{ $errors->first('email') }}</strong></div>
                         @endif                          
                     </div>
                     <div class="form-group my-1">
                         <label for="input-phone">Phone number</label>
-                        <input type="text" class="form-control" id="input-phone" aria-describedby="phone" placeholder="Enter Contact number" name="contact_number">
+                        <input type="text" class="form-control" id="input-phone" aria-describedby="phone" placeholder="Enter Contact number" name="contact_number" value="{{ old('contact_number') }}">
                         @if ($errors->has('contact_number'))
                             <div class="alert alert-danger" role="alert">{{ $errors->first('contact_number') }}</strong></div>
                         @endif                          
                     </div>
                     <div class="form-group my-1">
                         <label for="input-image">Image</label>
-                        <input type="file" class="form-control" id="input-image" aria-describedby="image" placeholder="Please provide image" name="image">
+                        <input type="file" class="form-control" id="input-image" aria-describedby="image" placeholder="{{ old('image') ?? 'Please provide image'}}" name="image">
                         @if ($errors->has('image'))
                             <div class="alert alert-danger" role="alert">{{ $errors->first('image') }}</strong></div>
                         @endif                          

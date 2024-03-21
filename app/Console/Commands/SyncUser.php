@@ -29,6 +29,7 @@ class SyncUser extends Command
     {
         $users = User::get()->toArray();
 
+        SyncUserModel::truncate();
         
         SyncUserModel::insert($users);
     }

@@ -13,6 +13,11 @@
             <div class="col-8">
                 <h2>List Users</h2>
             </div>
+            @if(session()->has('success'))
+            <div class="col-8">
+                <div class="alert alert-success" role="alert">{{ session()->get('success') }}</strong></div>
+            </div>
+            @endif
             <div class="col-8">
                 <table class="table">
                     <thead>
